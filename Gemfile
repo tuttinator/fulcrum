@@ -21,9 +21,9 @@ gem 'configuration'
 gem 'fastercsv', '1.5.3', :platforms => :ruby_18
 # (using standard csv lib if ruby version is 1.9)
 
-group :production do
-  gem 'pg'
-end
+gem 'pg'
+
+gem 'unicorn-rails'
 
 group :development, :test do
   gem 'sqlite3'
@@ -33,4 +33,8 @@ group :development, :test do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'database_cleaner'
+  # Deploy with Capistrano
+  gem 'capistrano', '~> 2.13'
+  gem 'capistrano-ext', '~> 1.2.1'
+  gem 'rvm-capistrano', '~> 1.2.7', :require => false
 end

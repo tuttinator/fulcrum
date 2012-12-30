@@ -11,6 +11,9 @@ group :assets do
   gem 'ejs'
 end
 
+gem 'airbrake_user_attributes'
+
+
 gem 'jquery-rails'
 
 gem 'devise'

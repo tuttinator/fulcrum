@@ -29,6 +29,11 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.2.8)
+    airbrake (3.1.6)
+      builder
+      girl_friday
+    airbrake_user_attributes (0.1.6)
+      airbrake (~> 3.1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
@@ -60,6 +65,7 @@ GEM
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     configuration (1.3.2)
+    connection_pool (0.9.3)
     database_cleaner (0.7.1)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
@@ -79,6 +85,9 @@ GEM
     fastercsv (1.5.3)
     ffi (1.0.11)
     fssm (0.2.9)
+    girl_friday (0.11.1)
+      connection_pool (~> 0.9.0)
+      rubinius-actor
     highline (1.6.15)
     hike (1.2.1)
     i18n (0.6.1)
@@ -154,6 +163,9 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.9.0)
+    rubinius-actor (0.0.2)
+      rubinius-core-api
+    rubinius-core-api (0.0.1)
     rubyzip (0.9.9)
     rvm-capistrano (1.2.7)
       capistrano (>= 2.0.0)
@@ -199,6 +211,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake_user_attributes
   capistrano (~> 2.13)
   capistrano-ext (~> 1.2.1)
   capybara

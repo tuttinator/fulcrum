@@ -55,5 +55,14 @@ module Fulcrum
       load Rails.root.join('config','fulcrum.rb')
     end
     config.fulcrum = ::Configuration.for 'fulcrum'
+    
+    # Custom devise layout.
+    config.to_prepare do
+      Devise::SessionsController.layout      'devise'
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? 'application' : 'devise' }
+      Devise::ConfirmationsController.layout 'devise'
+      Devise::UnlocksController.layout       'devise'            
+      Devise::PasswordsController.layout     'devise'        
+    end
   end
 end

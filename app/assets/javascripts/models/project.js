@@ -174,8 +174,10 @@ Fulcrum.Project = Backbone.Model.extend({
   velocity: function(userVelocity) {
     if(userVelocity !== undefined) {
 
+      console.log(userVelocity)
+
       if(userVelocity < 1) {
-        userVelocity = 1;
+        userVelocity = 20;
       }
 
       if(userVelocity === this.calculateVelocity()) {

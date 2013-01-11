@@ -4,6 +4,7 @@ config/fulcrum.rb
 db/*.sqlite3
 log/*.log
 tmp/
+tmp/*
 .rvmrc
 .sass-cache/
 bin/

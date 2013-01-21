@@ -23,7 +23,7 @@ Fulcrum.Project = Backbone.Model.extend({
   },
 
   defaults: {
-    default_velocity: 10
+    default_velocity: 40
   },
 
   url: function() {
@@ -196,6 +196,10 @@ Fulcrum.Project = Backbone.Model.extend({
   },
 
   calculateVelocity: function() {
+    
+    // Hack - to always use the default velocity
+    return this.get('default_velocity');
+
     if (this.doneIterations().length === 0) {
       return this.get('default_velocity');
     } else {

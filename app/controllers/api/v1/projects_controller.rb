@@ -1,6 +1,8 @@
 module Api
   module V1
     class ProjectsController < ApplicationController
+      http_basic_authenticate_with name: "admin", password: "secret"
+
       respond_to :json
       
       def index
@@ -19,9 +21,9 @@ module Api
         respond_with Project.update(params[:id], params[:projects])
       end
       
-      # def destroy
-      #   respond_with Project.destroy(params[:id])
-      # end
+      def destroy
+        respond_with Project.destroy(params[:id])
+      end
     end
   end
 end

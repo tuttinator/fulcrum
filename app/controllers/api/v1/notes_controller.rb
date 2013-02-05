@@ -1,6 +1,8 @@
 module Api
   module V1
     class NotesController < ApplicationController
+      http_basic_authenticate_with name: "admin", password: "secret"
+
       respond_to :json
       
       def index

@@ -33,6 +33,16 @@ Fulcrum::Application.routes.draw do
     match 'testcard' => 'static#testcard'
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :projects do
+        resources :stories do
+          resources :notes
+        end
+      end
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

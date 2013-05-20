@@ -8,6 +8,7 @@ gem 'rails', '~> 3.2.13'
 # in production environments by default.
 group :assets do
   gem 'sass-rails', "  ~> 3.2.0"
+  gem 'coffee-rails'
   gem 'uglifier'
   gem 'compass-rails'
   gem 'ejs'

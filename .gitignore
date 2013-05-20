@@ -9,3 +9,5 @@ tmp/*
 .sass-cache/
 bin/
 config/deploy.rb
+.ruby-gemset
+.ruby-version

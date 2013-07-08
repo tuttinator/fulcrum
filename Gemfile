@@ -19,9 +19,10 @@ gem 'airbrake_user_attributes'
 
 gem 'jquery-rails', '~> 2.1.4'
 
-gem 'devise'
+gem 'devise', "~> 2.0.5"
 gem 'transitions', '0.0.9', :require => ["transitions", "active_record/transitions"]
 gem 'i18n-js'
+gem 'rails-i18n'
 gem 'configuration'
 
 gem 'fastercsv', '1.5.3', :platforms => :ruby_18
@@ -43,4 +44,18 @@ group :development, :test do
   gem 'capistrano', '~> 2.13'
   gem 'capistrano-ext', '~> 1.2.1'
   gem 'rvm-capistrano', '~> 1.2.7', :require => false
+end
+
+
+if ENV['TRAVIS'] == 'true'
+  group :test do
+    case ENV['DB']
+    when'mysql'
+      gem 'mysql2'
+    when 'postgresql'
+      gem 'pg'
+    else
+      gem 'sqlite3'
+    end
+  end   
 end

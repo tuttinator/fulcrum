@@ -6,6 +6,10 @@ system for agile development teams.  See
 [the project page](http://wholemeal.co.nz/projects/fulcrum.html) for more
 details.
 
+[![Build Status](https://travis-ci.org/malclocke/fulcrum.png?branch=master)](https://travis-ci.org/malclocke/fulcrum)
+
+
+
 ![Fulcrum Screenshot](https://github.com/malclocke/fulcrum/raw/master/doc/screenshot.png)
 
 Get involved
@@ -119,6 +123,9 @@ Below is an example of how you might go about translating Fulcrum to German.
 * Copy the `config/locales/en.yml` file to `config/locales/de.yml`
 * Edit the file and update all the translated strings in quotes on the right
   hand side.
+* Add your new locale to `config.i18n.available_locales` in
+  `config/application.rb`
+* Run `rake i18n:js:export` to build the Javascript translations.
 
 Thats it!  Ideally you should send your translation as a pull request so you
 get credit for it, but if you do not wish to do this please send the file to
@@ -183,7 +190,7 @@ Fulcrum is built with the following Open Source technologies:
 
 License
 -------
-Copyright 2011, Malcolm Locke.
+Copyright 2011-2013, Malcolm Locke.
 
 Fulcrum is made available under the Affero GPL license version 3, see
 LICENSE.txt.

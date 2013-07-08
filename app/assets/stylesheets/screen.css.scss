@@ -215,10 +215,9 @@ div.story:hover {
 }
 
 div.story.editing, div.story.editing:hover {
-
-}
-div.story hr {
-  margin-bottom: 9px;
+  background-color: adjust-lightness($butter-1, 20);
+  color: $aluminium-6;
+  cursor: default !important;
 }
 
 div.story.feature.accepted,
@@ -236,9 +235,13 @@ div.story textarea {
 
 div.story-icons {
   float: left;
+  font-size: 0;
+}
+div.story-controls {
+  padding: 10px 0;
 }
 div.story-title {
-  margin-left: 65px;
+  margin-left: 50px;
 }
 .unestimated div.story-title {
 
@@ -248,12 +251,12 @@ div.story-title abbr.initials {
   border: none;
 }
 
-#in_progress div.story-title,
-#backlog div.story-title,
-#chilly_bin div.story-title {
+#in_progress div.story,
+#backlog div.story,
+#chilly_bin div.story {
   cursor: move;
 }
-#in_progress div.story.accepted div.story-title {
+#in_progress div.story.accepted div.story {
   cursor: inherit;
 }
 
@@ -573,6 +576,7 @@ div.spinner {
   }
 }
 
+<<<<<<< HEAD
 /* Project Form */
 
 select#project_start_date_1i,
@@ -583,4 +587,22 @@ select#project_start_date_3i {
 select#project_start_date_2i {
   width: 90px;
   font-size: 12px;
+=======
+div#keycut-help { 
+  top: 1em; left: 1em; 
+  position: absolute; opacity:0.8; 
+  background:black; color:yellow;
+  @include border-radius(5px);
+  
+  a.close {
+    color:yellow; text-align:right; display:block; margin:1em;
+  }
+  h4 { margin:0.8em; }
+  p {
+    margin:0.33em 1em; text-align:right; font-size:0.9em;
+    span {
+      display:inline-block; color:white; margin-right:0.8em; float:left;
+    }
+  }
+>>>>>>> 57a89b2fd7c77769290901f0a1c2aad1490ae94e
 }

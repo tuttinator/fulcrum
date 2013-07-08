@@ -7,7 +7,7 @@ gem 'rails', '~> 3.2.13'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.2.0"
+  gem 'sass-rails', '~> 3.2.0'
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'compass-rails'

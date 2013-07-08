@@ -215,9 +215,10 @@ div.story:hover {
 }
 
 div.story.editing, div.story.editing:hover {
-  background-color: adjust-lightness($butter-1, 20);
-  color: $aluminium-6;
-  cursor: default !important;
+
+}
+div.story hr {
+  margin-bottom: 9px;
 }
 
 div.story.feature.accepted,
@@ -576,7 +577,6 @@ div.spinner {
   }
 }
 
-<<<<<<< HEAD
 /* Project Form */
 
 select#project_start_date_1i,
@@ -587,7 +587,8 @@ select#project_start_date_3i {
 select#project_start_date_2i {
   width: 90px;
   font-size: 12px;
-=======
+}
+
 div#keycut-help { 
   top: 1em; left: 1em; 
   position: absolute; opacity:0.8; 
@@ -604,5 +605,4 @@ div#keycut-help {
       display:inline-block; color:white; margin-right:0.8em; float:left;
     }
   }
->>>>>>> 57a89b2fd7c77769290901f0a1c2aad1490ae94e
 }

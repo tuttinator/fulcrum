@@ -30,7 +30,7 @@ Fulcrum::Application.routes.draw do
     }
 
   if Rails.env.development?
-    match 'testcard' => 'static#testcard'
+    get 'testcard' => 'static#testcard'
   end
 
   namespace :api do

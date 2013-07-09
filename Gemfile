@@ -2,37 +2,36 @@ source 'http://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'rails', '~> 3.2.13'
+gem 'rails', '~> 4.0.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', '~> 3.2.0'
+  gem 'sass-rails', '~> 4.0.0'
   gem 'coffee-rails'
   gem 'uglifier'
-  gem 'compass-rails'
+  gem "compass-rails", github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
   gem 'ejs'
 end
 
 gem 'airbrake_user_attributes'
 
 
-gem 'jquery-rails', '~> 2.1.4'
+gem 'jquery-rails'
+gem 'rails-observers'
 
-gem 'devise', "~> 2.0.5"
+gem 'devise'
 gem 'transitions', '0.0.9', :require => ["transitions", "active_record/transitions"]
 gem 'i18n-js'
 gem 'rails-i18n'
 gem 'configuration'
-
-gem 'fastercsv', '1.5.3', :platforms => :ruby_18
-# (using standard csv lib if ruby version is 1.9)
 
 gem 'pg'
 
 gem 'unicorn-rails'
 
 group :development, :test do
+  gem 'thin'
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'

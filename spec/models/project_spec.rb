@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Project do
 
 
-  subject { Factory.build :project }
+  subject { FactoryGirl.build :project }
 
 
   describe "validations" do
@@ -103,7 +103,7 @@ describe Project do
 
 
   describe "#to_s" do
-    subject { Factory.build :project, :name => 'Test Name' }
+    subject { FactoryGirl.build :project, :name => 'Test Name' }
 
     its(:to_s) { should == 'Test Name' }
   end
@@ -134,7 +134,7 @@ describe Project do
   end
 
   describe "#csv_filename" do
-    subject { Factory.build(:project, :name => 'Test Project') }
+    subject { FactoryGirl.build(:project, :name => 'Test Project') }
 
     its(:csv_filename) { should match(/^Test Project-\d{8}_\d{4}\.csv$/) }
   end

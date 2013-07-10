@@ -6,7 +6,7 @@ describe Note do
   let(:user)    { mock_model(User) }
   let(:story)   { mock_model(Story, :project => project) }
 
-  subject { Factory.build :note, :story => story, :user => user }
+  subject { FactoryGirl.build :note, :story => story, :user => user }
 
   describe "validations" do
 

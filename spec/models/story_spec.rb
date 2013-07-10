@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Story do
 
-  subject { Factory.build :story }
+  subject { FactoryGirl.build :story }
 
   describe "validations" do
 

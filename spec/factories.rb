@@ -1,39 +1,41 @@
 FactoryGirl.define do
 
-  factory :user do |u|
-    u.sequence(:name) {|n| "User #{n}"}
-    u.sequence(:initials) {|n| "U#{n}"}
-    u.sequence(:email) {|n| "user#{n}@example.com"}
-    u.password 'password'
-    u.password_confirmation 'password'
-    u.after_build {|user| user.confirm!}
+  factory :user do
+    sequence(:name) {|n| "User #{n}"}
+    sequence(:initials) {|n| "U#{n}"}
+    sequence(:email) {|n| "user#{n}@example.com"}
+    password 'password'
+    password_confirmation 'password'
+    after(:create) do |user| 
+      user.confirm!
+    end
   end
 
-  factory :unconfirmed_user, :class => User do |u|
-    u.sequence(:name) {|n| "Unconfirmed User #{n}"}
-    u.sequence(:initials) {|n| "U#{n}"}
-    u.sequence(:email) {|n| "unconfirmed_user#{n}@example.com"}
+  factory :unconfirmed_user, :class => User do
+    sequence(:name) {|n| "Unconfirmed User #{n}"}
+    sequence(:initials) {|n| "U#{n}"}
+    sequence(:email) {|n| "unconfirmed_user#{n}@example.com"}
   end
 
-  factory :project do |p|
-    p.name 'Test Project'
+  factory :project do
+    name 'Test Project'
   end
 
-  factory :story do |s|
-    s.title 'Test story'
-    s.association :requested_by, :factory => :user
-    s.association :project
+  factory :story do
+    title 'Test story'
+    requested_by :factory => :user
+    project
   end
 
-  factory :changeset do |c|
-    c.association :story
-    c.association :project
+  factory :changeset do
+    story
+    project
   end
 
-  factory :note do |n|
-    n.note        'Test note'
-    n.association :story
-    n.association :user
+  factory :note do
+    note        'Test note'
+    story
+    user
   end
 
 end

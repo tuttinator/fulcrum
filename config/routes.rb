@@ -26,7 +26,8 @@ Fulcrum::Application.routes.draw do
 
   devise_for :users, :controllers => { 
       :confirmations => "confirmations", 
-      :registrations => "registrations"
+      :passwords => "users/passwords",
+      :registrations => "users/registrations"    
     }
 
   if Rails.env.development?

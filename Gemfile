@@ -18,9 +18,10 @@ gem 'airbrake_user_attributes'
 
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'rails-observers'
 
-gem 'devise'
+gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 gem 'transitions', '0.0.9', :require => ["transitions", "active_record/transitions"]
 gem 'i18n-js'
 gem 'rails-i18n'

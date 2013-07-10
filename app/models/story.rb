@@ -17,13 +17,13 @@ class Story < ActiveRecord::Base
   belongs_to :project
   validates_presence_of :project
 
-  validates :title, :presence => true
+  validates :title, presence: true
 
-  belongs_to :requested_by, :class_name => 'User'
-  validates :requested_by_id, :belongs_to_project => true
+  belongs_to :requested_by, class_name: 'User'
+  validates :requested_by_id, belongs_to_project: true
 
-  belongs_to :owned_by, :class_name => 'User'
-  validates :owned_by_id, :belongs_to_project => true
+  belongs_to :owned_by, class_name: 'User'
+  validates :owned_by_id, belongs_to_project: true
 
   has_many :changesets
   has_many :notes do
@@ -77,10 +77,10 @@ class Story < ActiveRecord::Base
   before_save :set_accepted_at
 
   # Scopes for the different columns in the UI
-  scope :done, where(:state => :accepted)
-  scope :in_progress, where(:state => [:started, :finished, :delivered])
-  scope :backlog, where(:state => :unstarted)
-  scope :chilly_bin, where(:state => :unscheduled)
+  scope :done, -> { where(:state => :accepted) }
+  scope :in_progress, -> { where(:state => [:started, :finished, :delivered]) }
+  scope :backlog, -> { where(:state => :unstarted) }
+  scope :chilly_bin, -> { where(:state => :unscheduled) }
 
   include ActiveRecord::Transitions
   state_machine do

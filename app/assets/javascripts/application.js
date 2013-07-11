@@ -3,7 +3,7 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
+//= require jquery.ui.all
 //= require jquery.gritter.min
 //= require jquery.scrollTo-min
 //= require_self

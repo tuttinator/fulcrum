@@ -3,10 +3,10 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery-ui
 //= require jquery.gritter.min
 //= require jquery.scrollTo-min
-//= require fulcrum
+//= require_self
 //= require date.format
 //= require underscore
 //= require backbone
@@ -17,8 +17,10 @@
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
-//= require bootstrap-tooltip
+//= require fulcrum
+//= require bootstrap-twipsy
 //= require bootstrap-popover
 //= require tag-it
 //= require i18n
 //= require i18n/translations
+//= require_tree .
